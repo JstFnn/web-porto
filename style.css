@@ -1,0 +1,850 @@
+/* ----- POPPINS FONT Link ----- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ----- VARIABLES ----- */
+:root {
+  --body-color: #ffffff; /* Latar belakang putih bersih */
+  --color-white: #ffffff; /* Putih */
+
+  --text-color-second: #444444; /* Abu-abu gelap */
+  --text-color-third: #16a085; /* Biru kehijauan gelap */
+
+  --first-color: #8e44ad; /* Ungu tua */
+  --first-color-hover: #a569bd; /* Ungu cerah saat hover */
+
+  --second-color: #1abc9c; /* Hijau toska */
+  --third-color: #f39c12; /* Kuning oranye */
+
+  --fourth-color: #2c3e50; /* Biru tua */
+  --fifth-color: #bdc3c7; /* Abu-abu muda */
+
+  --first-shadow-color: rgba(0, 0, 0, 0.2); /* Bayangan lebih gelap */
+}
+
+/* :root {
+  --body-color: rgb(250, 250, 250);
+  --color-white: rgb(255, 255, 255);
+
+  --text-color-second: rgb(68, 68, 68);
+  --text-color-third: rgb(30, 159, 171);
+
+  --first-color: rgb(110, 87, 224) Navy: #001F3F;
+  --first-color-hover: rgb(40, 91, 212);
+  
+
+  --second-color: rgb(0, 201, 255);
+  --third-color: rgb(192, 166, 49);
+  --first-shadow-color: rgba(0, 0, 0, 0.1);
+} */
+
+/* ----- BASE ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ----- SMOOTH SCROLL ----- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ----- CHANGE THE SCROLL BAR DESIGN ----- */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* ---##-- REUSABLE CSS --##--- */
+
+/* ----- GLOBAL BUTTON DESIGN ----- */
+.btn {
+  font-weight: 500;
+  padding: 12px 20px;
+  background: #efefef;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.btn > i {
+  margin-left: 10px;
+}
+.btn:hover {
+  background: var(--second-color);
+  color: var(--color-white);
+}
+
+/* ----- GLOBAL ICONS DESIGN ----- */
+i {
+  font-size: 16px;
+}
+
+/* ------- BASE -------- */
+body {
+  background: var(--body-color);
+}
+.container {
+  width: 100%;
+  position: relative;
+}
+
+/* ----- NAVIGATION BAR ----- */
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  line-height: 90px;
+  background: var(--body-color);
+  padding-inline: 9vw;
+  transition: 0.3s;
+  z-index: 100;
+}
+.nav-logo {
+  position: relative;
+}
+.nav-name {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text-color-third);
+}
+.nav-logo span {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+  font-size: 5em;
+  color: var(--text-color-second);
+}
+.nav-menu,
+.nav_menu_list {
+  display: flex;
+}
+.nav-menu .nav_list {
+  list-style: none;
+  position: relative;
+}
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color-second);
+  font-weight: 500;
+  padding-inline: 15px;
+  margin-inline: 20px;
+}
+
+.nav-link:hover {
+  color: var(--first-color); /* Change text color on hover (Tomato color) */
+  transform: scale(1.1); /* Slightly increase size on hover */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for scaling and color */
+}
+.nav-menu-btn {
+  display: none;
+}
+
+.nav-menu-btn i {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.active-link {
+  position: relative;
+  color: white; /* Change text color to white for better contrast */
+  /* transition: 0.3s ease; */
+  background: var(--first-color); /* Background color matching the link color */
+  padding: 5px 10px; /* Add padding to create space around the text */
+  border-radius: 5px; /* Rounded corners for the background */
+  z-index: -1;
+}
+
+.active-link::after {
+  /* content: "";
+  position: absolute; */
+  left: 50%;
+  bottom: -15px;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: var(--first-color);
+  border-radius: 50%;
+}
+
+/* ----- WRAPPER DESIGN ----- */
+.wrapper {
+  padding-inline: 10vw;
+}
+
+/* ----- FEATURED BOX ----- */
+.featured-box {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  min-height: 700px;
+}
+
+/* ----- FEATURED TEXT BOX ----- */
+.featured-text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  min-height: 80vh;
+  flex-direction: column;
+  width: 50%;
+  padding-left: 20px;
+}
+.featured-text-card span {
+  background: var(--third-color);
+  color: var(--color-white);
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.featured-name {
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--text-color-second);
+  margin-block: 20px;
+}
+.typedText {
+  text-transform: capitalize;
+  color: var(--text-color-third);
+}
+.featured-text-info {
+  font-size: 15px;
+  margin-bottom: 30px;
+  color: var(--text-color-second);
+}
+.featured-text-btn {
+  display: flex;
+  gap: 20px;
+}
+.featured-text-btn > .blue-btn {
+  background: var(--first-color);
+  color: var(--color-white);
+}
+.featured-text-btn > .blue-btn:hover {
+  background: var(--first-color-hover);
+}
+.social_icons {
+  display: flex;
+  margin-top: 5em;
+  gap: 30px;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.icon:hover {
+  background-color: var(--second-color);
+  color: white;
+}
+
+/* ----- FEATURED IMAGE BOX ----- */
+.featured-image {
+  display: flex;
+  justify-content: right;
+  align-content: center;
+  min-height: 80vh;
+  width: 50%;
+}
+.image {
+  margin: auto 0; /* Mengatur margin secara otomatis di atas dan bawah */
+  width: 380px; /* Lebar gambar */
+  height: 380px; /* Tinggi gambar */
+  border-radius: 55% 45% 55% 45%; /* Membuat sudut gambar melengkung */
+  overflow: hidden; /* Memastikan konten yang keluar dari batas gambar tersembunyi */
+  animation: imgFloat 7s ease-in-out infinite; /* Menambahkan efek animasi */
+
+  /* Mengatur bayangan */
+  box-shadow: 0 4px 20px rgba(139, 28, 28, 0.2); /* Bayangan luar */
+}
+
+.image img {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+}
+@keyframes imgFloat {
+  50% {
+    transform: translateY(10px);
+    border-radius: 45% 55% 45% 55%;
+  }
+}
+.scroll-btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  gap: 5px;
+  text-decoration: none;
+  color: var(--text-color-second);
+  background: var(--color-white);
+  border-radius: 30px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+.scroll-btn i {
+  font-size: 20px;
+}
+
+/* ----- MAIN BOX ----- */
+.section {
+  padding-block: 5em;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 50px;
+}
+.col {
+  display: flex;
+  width: 50%;
+}
+
+/* -- ## --- RESUABLE CSS -- ## -- */
+.top-header {
+  text-align: center;
+  margin-bottom: 5em;
+}
+.top-header h1 {
+  font-weight: 600;
+  color: var(--text-color-second);
+  margin-bottom: 10px;
+}
+.top-header span {
+  color: #999;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color-second);
+  margin: 15px;
+}
+
+/* ----- ABOUT INFO ----- */
+
+.row-about {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center; /* Centers the flex items horizontally */
+  align-items: center; /* Centers the flex items vertically */
+  padding: 0 20px;
+}
+
+.col-about {
+  flex: 1; /* Ensure both columns take equal width */
+  max-width: 50%; /* Ensure each column does not exceed 50% width */
+}
+
+.image-col {
+  text-align: center;
+}
+
+.about-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 30px 70px;
+  padding-inline: 20px;
+  width: 100%;
+  background-color: var(--second-color);
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  border-radius: 20px;
+}
+.about-info h3 {
+  color: var(--color-white);
+}
+.about-info p {
+  text-align: center;
+  font-size: 15px;
+  color: var(--color-white);
+}
+.about-btn {
+  margin-top: 20px;
+}
+.about-btn button {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: var(--first-color);
+  color: var(--color-white);
+  border-radius: 30px;
+}
+.about-btn button:hover {
+  background: var(--first-color-hover);
+}
+
+.profile-pic {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15%;
+  padding: 45px;
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  border-radius: 20px;
+}
+
+/* ----- ABOUT / SKILLS BOX ----- */
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the logos horizontally */
+  gap: 20px; /* Adds space between the logos */
+  padding: 20px;
+}
+.skills-wrapper {
+  overflow: hidden; /* Hides overflow to keep animation inside the container */
+  width: 60%; /* Sets the width to a portion of the page */
+  margin: 0 auto; /* Centers the wrapper horizontally */
+  height: 80px; /* Sets the height of the wrapper */
+  display: flex;
+  align-items: center; /* Vertically centers the grid */
+  padding-left: 10%; /* Adds padding on the left */
+  padding-right: 10%; /* Adds padding on the right */
+  position: relative; /* Keeps the wrapper positioned */
+}
+nav .skill-item {
+  flex: 0 1 100px; /* Adjusts the size of each logo container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-logo {
+  filter: grayscale(1);
+  width: 40px; /* Fixed width */
+  height: 40px; /* Fixed height */
+  /* Ensures the logo fits inside without being stretched */
+  object-fit: contain;
+  transition: transform 0.3s ease; /* Adds a hover effect */
+}
+
+/* Add hover effect for logo */
+.skill-logo:hover {
+  transform: scale(1.2); /* Slightly enlarges the logo on hover */
+  filter: grayscale(0);
+}
+
+/* Ensure container allows space for hover */
+.skill-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Add padding to give space around logos */
+  transition: padding 0.3s ease; /* Smooth transition for padding when scaling */
+}
+
+.skills-box {
+  margin: 10px;
+}
+.skills-header {
+  margin-bottom: 30px;
+}
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.skills-list span {
+  font-size: 14px;
+  background: var(--first-color);
+  color: var(--color-white);
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+/* ----- PROJECTS BOX ----- */
+.project-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.project-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+  height: 250px;
+  background: var(--color-white);
+  border-radius: 20px;
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  overflow: hidden;
+}
+
+.project-box .btn {
+  background-color: var(--second-color); /* Default button color (secondary) */
+  color: var(--color-white); /* White text color */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.4s ease, color 0.4s ease; /* Smooth transition */
+  z-index: 2; /* Ensures the button is above the hover background */
+}
+
+/* Hover effect on the project-box, making the button white */
+.project-box:hover .btn {
+  background-color: var(--color-white); /* Button background changes to white */
+  color: var(--second-color); /* Text color changes to secondary color */
+  border: 1px solid var(--second-color); /* Optional border for better contrast */
+  transform: scale(1.1);
+}
+
+.project-box > i {
+  font-size: 50px;
+  color: var(--second-color);
+  margin-bottom: 25px;
+}
+.project-box label {
+  font-size: 15px;
+  color: #777;
+}
+.project-box:hover .btn i.uil-arrow-up-right {
+  color: var(--second-color); /* Change the color of the arrow */
+  transform: translateX(5px); /* Add slight movement to the right */
+}
+.project-box::after,
+.contact-info::after {
+  content: "";
+  position: absolute;
+  bottom: -100%;
+  background: var(--second-color);
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+  z-index: -1;
+}
+.project-box:hover.project-box::after,
+.contact-info:hover.contact-info::after {
+  bottom: 0;
+}
+
+.project-box:hover.project-box i,
+.project-box:hover.project-box > h3,
+.project-box:hover.project-box > label {
+  color: var(--color-white);
+  z-index: 2;
+}
+
+/* ----- CONTACT BOX ----- */
+.contact-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+  width: 100%;
+  height: 315px;
+  background: var(--second-color);
+  border-radius: 10px;
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  overflow: hidden;
+}
+.contact-info > h2 {
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+.contact-info > p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-white);
+  margin-block: 5px;
+}
+.contact-info p > i {
+  font-size: 18px;
+}
+.contact-info::after {
+  background: var(--color-white);
+}
+.contact-info:hover.contact-info h2,
+.contact-info:hover.contact-info p,
+.contact-info:hover.contact-info i {
+  color: #777;
+  z-index: 2;
+}
+
+/* ----- CONTACT FORM ----- */
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.form-inputs {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.input-field {
+  width: 50%;
+  height: 55px;
+  background: transparent;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  padding-inline: 20px;
+  outline: none;
+}
+textarea {
+  width: 100%;
+  height: 250px;
+  background: transparent;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  padding: 15px 20px;
+  outline: none;
+  resize: none;
+}
+
+.form-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-button > .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--second-color);
+  color: var(--color-white);
+}
+.form-button > .btn:hover {
+  background: #18ac8e;
+}
+.form-button i {
+  font-size: 18px;
+  rotate: -45deg;
+}
+
+/* ----- FOOTER BOX ----- */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 30px;
+  background: var(--second-color);
+  z-index: -2;
+  /* background: #f8f8f8; */
+  padding-block: 40px 60px;
+}
+.top-footer p {
+  font-size: 25px;
+  font-weight: 600;
+}
+.middle-footer .footer-menu {
+  display: flex;
+}
+.footer_menu_list {
+  list-style: none;
+}
+
+.footer_menu_list a:hover {
+  color: var(--color-white); /* Change text color on hover (Tomato color) */
+  transform: scale(1.1); /* Slightly increase size on hover */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for scaling and color */
+}
+.footer_menu_list a {
+  text-decoration: none;
+  color: var(--text-color-second);
+  font-weight: 500;
+  margin-inline: 20px;
+}
+.footer-social-icons {
+  display: flex;
+  gap: 30px;
+}
+.bottom-footer {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* POP UP */
+
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.popup-content h2 {
+  margin: 0 0 10px;
+}
+
+.close-btn {
+  background-color: var(--second-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.close-btn:hover {
+  background-color: #18ac8e;
+}
+
+/* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
+@media only screen and (max-width: 1024px) {
+  .featured-text {
+    padding: 0;
+  }
+  .image,
+  .image img {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+/* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
+@media only screen and (max-width: 900px) {
+  .nav-button {
+    display: none;
+  }
+  .nav-menu.responsive {
+    left: 0;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    min-height: 450px;
+    height: 90vh;
+    transition: 0.3s;
+  }
+  .nav_menu_list {
+    flex-direction: column;
+  }
+  .nav-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .featured-box {
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+  .featured-text {
+    width: 100%;
+    order: 2;
+    justify-content: center;
+    align-content: flex-start;
+    min-height: 60vh;
+  }
+  .social_icons {
+    margin-top: 2em;
+  }
+  .featured-image {
+    order: 1;
+    justify-content: center;
+    min-height: 150px;
+    width: 100%;
+    margin-top: 65px;
+  }
+  .image,
+  .image img {
+    width: 150px;
+    height: 150px;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+  }
+  .col {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .about-info,
+  .contact-info {
+    width: 100%;
+  }
+  .project-container {
+    justify-content: center;
+  }
+  .project-box {
+    width: 80%;
+  }
+  .skills-grid {
+    gap: 10px; /* Reduce space between logos on smaller screens */
+  }
+
+  .skill-logo {
+    width: 60px; /* Smaller logo size on mobile */
+    height: 60px;
+  }
+}
+
+/* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
+
+@media only screen and (max-width: 540px) {
+  .featured-name {
+    font-size: 40px;
+  }
+  .project-box {
+    width: 100%;
+  }
+  .form-inputs {
+    flex-direction: column;
+  }
+  .input-field {
+    width: 100%;
+  }
+  .skill-logo {
+    width: 50px; /* Even smaller logo size on small phones */
+    height: 50px;
+  }
+}
